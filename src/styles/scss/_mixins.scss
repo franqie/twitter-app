@@ -1,0 +1,7 @@
+@mixin bg-hover-effect {
+    transition: background-color ease 0.2s;
+
+    &:hover {
+        background-color: #e1e8ed;
+    }
+}

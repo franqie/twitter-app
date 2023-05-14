@@ -1,0 +1,25 @@
+.nav-item {
+    margin: 0.2rem 0.25rem;
+    padding: 0.45rem 0.55rem;
+    padding-right: 1.5rem;
+    border-radius: 20px;
+    // display: flex;
+    // align-items: center;
+    display: inline-block;
+
+    @include bg-hover-effect;
+
+    svg {
+        margin-right: 1rem;
+        vertical-align: middle;
+        line-height: 1.5;
+    }
+
+    .nav-text {
+        font-size: 1.1rem;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1.5;
+        transform: translateY(-1px);
+    }
+}

@@ -1,0 +1,11 @@
+.app {
+    height: 100vh;
+    padding: 0 4rem;
+    // background: cyan;
+
+    .container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+}
