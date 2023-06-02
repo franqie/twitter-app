@@ -1,0 +1,55 @@
+.messages {
+    // background: rgb(200, 176, 176);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 420px;
+    height: 53px;
+    padding: 0;
+    padding-bottom: 0.2rem;
+    border-radius: 12px 12px 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    transition: height ease 0.2s;
+    overflow-y: hidden;
+    
+    .messages-header {
+        padding: 0.65rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // margin-bottom: 1rem;
+        cursor: pointer;
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        background-color: #fff;
+    }
+    
+    
+    .message-btn {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+        background: transparent;
+        border: 0;
+        border-radius: 50%;
+        margin: 0 2px;
+        cursor: pointer;
+        @include bg-hover-effect;
+        
+        svg {
+            width: 20px;
+            transform: translateY(2px);
+        }
+    }
+}
+
+.messages.show {
+    height: 520px;
+    overflow-y: auto;
+}

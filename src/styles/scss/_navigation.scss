@@ -1,20 +1,22 @@
 .navigation {
-    padding: 0.1rem 2rem 0.5rem 1rem;
+    padding: 0.1rem 0 0.5rem 1rem;
     // padding-top: 0.1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid #eee;
+    height: 100%;
+    max-height: 100vh;
+    width: $nav-width;
+    position: fixed;
 
     svg {
         width: 28px;
     }
 
-    // .nav-container {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: space-between;
-    // }
+    .nav-container {
+       padding-right: 1rem;
+    }
 
     .logo {
         width: 50px;
@@ -28,21 +30,23 @@
         
         svg {
             width: 30px;
-            fill: #1da1f2;
+            fill: $twitterBlue;
         }
     }
 
     .tweet {
-        background-color: #1da1f2;
+        background-color: $twitterBlue;
         color: #fff;
-        height: 42px;
-        line-height: 42px;
-        border-radius: 20px;
+        width: 200px;
+        height: 48px;
+        line-height: 48px;
+        border-radius: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: 600;
+        font-weight: 700;
         margin-top: 0.3rem;
+        cursor: pointer;
     }
 
     // .nav-links {
@@ -51,11 +55,14 @@
     // }
 
     .profile {
+        width: 230px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0.8rem 0.8rem;
         border-radius: 2rem;
+        position: absolute;
+        bottom: 1rem;
 
         @include bg-hover-effect;
 

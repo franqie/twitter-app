@@ -1,22 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   height: 100vh;
   padding: 0 4rem;
 }
 .app .container {
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: flex;
 }
 
 .navigation {
-  padding: 0.1rem 2rem 0.5rem 1rem;
+  padding: 0.1rem 0 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid #eee;
+  height: 100%;
+  max-height: 100vh;
+  width: 255px;
+  position: fixed;
 }
 .navigation svg {
   width: 28px;
+}
+.navigation .nav-container {
+  padding-right: 1rem;
 }
 .navigation .logo {
   width: 50px;
@@ -37,21 +49,26 @@
 .navigation .tweet {
   background-color: #1da1f2;
   color: #fff;
-  height: 42px;
-  line-height: 42px;
-  border-radius: 20px;
+  width: 200px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.3rem;
+  cursor: pointer;
 }
 .navigation .profile {
+  width: 230px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 0.8rem;
   border-radius: 2rem;
+  position: absolute;
+  bottom: 1rem;
   transition: background-color ease 0.2s;
 }
 .navigation .profile:hover {
@@ -88,6 +105,7 @@
   padding-right: 1.5rem;
   border-radius: 20px;
   display: inline-block;
+  cursor: pointer;
   transition: background-color ease 0.2s;
 }
 .nav-item:hover {
@@ -107,5 +125,466 @@
 }
 
 .homepage {
-  padding: 2rem;
+  padding: 0.4rem 0;
+  flex-grow: 1;
+  margin-left: 255px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.home {
+  width: 100%;
+}
+.home .home-header {
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  height: 121px;
+  width: 608px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.home h2 {
+  padding: 1rem;
+  cursor: pointer;
+}
+.home .fyf {
+  display: flex;
+}
+.home .fyf button {
+  width: 50%;
+  height: 54px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgb(83, 100, 113);
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.home .fyf span {
+  display: inline-block;
+  height: 100%;
+  line-height: 53px;
+  border-bottom: 4px solid transparent;
+}
+.home .fyf span.active {
+  border-bottom-color: #1da1f2;
+  color: black;
+}
+.home .tweetfieldbox {
+  display: flex;
+  padding: 0.7rem 1rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 121px;
+}
+.home .tweetfieldbox svg {
+  width: 18px;
+}
+.home .tweetfieldbox img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 1rem;
+}
+.home .tweetfieldbox .tweetfield {
+  flex-grow: 1;
+}
+.home .tweetfieldbox .tweetinput {
+  flex-grow: 1;
+}
+.home .tweetfieldbox .tweetinput button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-weight: 600;
+  color: #1da1f2;
+  border: 0;
+  cursor: pointer;
+  padding: 1px 12px;
+  border-radius: 12px;
+}
+.home .tweetfieldbox .tweetinput button:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+.home .tweetfieldbox .tweetinput .btn-top {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.home .tweetfieldbox .tweetinput .btn-top svg {
+  margin-left: 5px;
+  fill: #1da1f2;
+}
+.home .tweetfieldbox .tweetinput .btn-bottom {
+  margin-left: -8px;
+}
+.home .tweetfieldbox .tweetinput .btn-bottom svg {
+  margin-right: 5px;
+  fill: #1da1f2;
+}
+.home .tweetfieldbox .tweetinput input {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+.home .tweetfieldbox .tweetctrl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  margin-top: 0.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.home .tweetfieldbox .tweetctrl .tweeticon {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.home .tweetfieldbox .tweetctrl .tweeticon:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+.home .tweetfieldbox .tweetctrl .tweeticon:first-child {
+  margin-left: 0;
+}
+.home .tweetfieldbox .tweetctrl svg {
+  fill: #1da1f2;
+}
+.home .tweetfieldbox .tweetctrl .tweetbtn {
+  color: #fff;
+  background-color: #1da1f2;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 0;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.rightbox {
+  padding: 0 1rem;
+}
+.rightbox form {
+  position: fixed;
+  top: 0;
+  width: 380px;
+  background-color: #fff;
+  padding: 0.5rem 0 0.3rem;
+}
+.rightbox .searchbox {
+  background-color: rgba(164, 164, 164, 0.2);
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.rightbox .searchbox .searchIcon {
+  margin: 0 15px 0 12px;
+}
+.rightbox .searchbox .searchIcon svg {
+  width: 20px;
+  transform: translateY(2px);
+}
+.rightbox .searchbox input {
+  width: 100%;
+  display: relative;
+  outline: 0;
+  border: 0;
+  padding: 10px 0;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 14px;
+}
+.rightbox .searchbox.hasfocus {
+  border: 1px solid #1da1f2;
+  background-color: #fff;
+}
+.rightbox .searchbox.hasfocus svg {
+  fill: #1da1f2;
+}
+.rightbox svg {
+  width: 24px;
+}
+.rightbox img {
+  width: 52px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.rightbox .tb-tf-rf {
+  width: 380px;
+  margin-top: 63px;
+}
+.rightbox .followbox,
+.rightbox .trendbox {
+  background-color: rgba(164, 164, 164, 0.2);
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+.rightbox .followbox h2,
+.rightbox .trendbox h2 {
+  padding: 0.7rem 1rem;
+}
+.rightbox .followbox .showmore-btn,
+.rightbox .trendbox .showmore-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0 0 20px 20px;
+  border: 0;
+  font-weight: 600;
+  text-align: left;
+  color: #1da1f2;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color ease 0.2s;
+}
+.rightbox .followbox .showmore-btn:hover,
+.rightbox .trendbox .showmore-btn:hover {
+  background-color: #e1e8ed;
+}
+.rightbox .right-footer {
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+  padding: 0.2rem 1rem;
+  font-size: 0.85rem;
+  color: rgb(83, 100, 113);
+}
+.rightbox .right-footer span {
+  margin-right: 0.8rem;
+  line-height: 1.3;
+}
+
+.messages {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  width: 420px;
+  height: 53px;
+  padding: 0;
+  padding-bottom: 0.2rem;
+  border-radius: 12px 12px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  transition: height ease 0.2s;
+  overflow-y: hidden;
+}
+.messages .messages-header {
+  padding: 0.65rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+.messages .message-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background-color ease 0.2s;
+}
+.messages .message-btn:hover {
+  background-color: #e1e8ed;
+}
+.messages .message-btn svg {
+  width: 20px;
+  transform: translateY(2px);
+}
+
+.messages.show {
+  height: 520px;
+  overflow-y: auto;
+}
+
+.dmessage {
+  padding: 0.85rem 1rem;
+  padding-right: 0.5rem;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color ease 0.2s;
+}
+.dmessage:hover {
+  background-color: #edf1f4;
+}
+.dmessage .picture {
+  width: 52px;
+  height: 52px;
+  margin-right: 0.8rem;
+}
+.dmessage .picture img {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0;
+}
+.dmessage .message-body {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.dmessage .message-body .message-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1.1rem;
+  flex: 1 1 auto;
+  margin-top: -5px;
+  color: rgb(83, 100, 113);
+  word-spacing: -1px;
+}
+.dmessage .message-body .message-head {
+  display: flex;
+  align-items: center;
+}
+.dmessage .message-body .message-head .name {
+  font-weight: 600;
+  margin-right: 0.3rem;
+  max-width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(38, 42, 46);
+}
+.dmessage .message-body .message-head .username {
+  max-width: 8ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+}
+.dmessage .message-body button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  align-self: flex-start;
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  transition: all ease 0.25s;
+}
+.dmessage .message-body button svg {
+  width: 20px;
+}
+.dmessage .message-body button:hover {
+  background-color: #d1ecfc;
+}
+.dmessage .message-body button:hover {
+  fill: #1da1f2;
+}
+.dmessage .message-body p {
+  width: 29ch;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dmessage:hover button {
+  display: flex;
+}
+
+.trend {
+  padding: 0.6rem 1rem;
+  transition: background-color ease 0.2s;
+  cursor: pointer;
+}
+.trend:hover {
+  background-color: #e1e8ed;
+}
+.trend .trendtop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(83, 100, 113);
+}
+.trend .trendtop svg {
+  width: 20px;
+  fill: rgb(83, 100, 113);
+}
+.trend .trendtopic {
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+.trend .tweetcount {
+  color: rgb(83, 100, 113);
+}
+
+.whotofollow {
+  padding: 0.6rem 1rem;
+  transition: background-color ease 0.2s;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.whotofollow:hover {
+  background-color: #e1e8ed;
+}
+.whotofollow img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-right: 0.9rem;
+}
+.whotofollow .wtf-details {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.whotofollow .wtf-text {
+  display: flex;
+  flex-direction: column;
+}
+.whotofollow .wtf-text .wtf-name {
+  font-weight: 700;
+  word-spacing: -1px;
+  transition: all ease 0.2s;
+}
+.whotofollow .wtf-text .wtf-name:hover {
+  text-decoration: underline;
+}
+.whotofollow .wtf-text .wtf-username {
+  color: rgb(83, 100, 113);
+  word-spacing: 1px;
+}
+.whotofollow button {
+  background-color: black;
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 18px;
+  border: 1px solid black;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

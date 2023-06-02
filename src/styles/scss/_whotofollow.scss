@@ -1,0 +1,51 @@
+.whotofollow {
+    padding: 0.6rem 1rem;
+    @include bg-hover-effect;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        margin-right: 0.9rem;
+    }
+
+    .wtf-details {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .wtf-text {
+        display: flex;
+        flex-direction: column;
+
+        .wtf-name {
+            font-weight: 700;
+            word-spacing: -1px;
+            transition: all ease 0.2s;
+        }
+        .wtf-name:hover {
+            text-decoration: underline;
+        }
+        
+        .wtf-username {
+            color: $text-light;
+            word-spacing: 1px;
+        }
+    }
+
+    button {
+        background-color: black;
+        height: 36px;
+        padding: 0 1rem;
+        border-radius: 18px;
+        border: 1px solid black;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,27 @@
+.trend {
+    padding: 0.6rem 1rem;
+    @include bg-hover-effect;
+    cursor: pointer;
+
+    .trendtop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $text-light;
+
+        svg {
+            width: 20px;
+            fill: $text-light;
+        }
+    }
+
+    .trendtopic {
+        font-weight: 700;
+        text-transform: capitalize;
+        line-height: 1.5;
+    }
+
+    .tweetcount {
+        color: $text-light;
+    }
+}

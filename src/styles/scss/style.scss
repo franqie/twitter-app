@@ -1,5 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "variables";
 @import "app";
 @import "mixins";
 @import "navigation";
 @import "navitem";
 @import "homepage";
+@import "home";
+@import "rightbox";
+@import "messages";
+@import "dmessage";
+@import "trend";
+@import "whotofollow";
+@import "trendbox";
+@import "tweet";

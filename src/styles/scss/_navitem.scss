@@ -6,6 +6,7 @@
     // display: flex;
     // align-items: center;
     display: inline-block;
+    cursor: pointer;
 
     @include bg-hover-effect;
 

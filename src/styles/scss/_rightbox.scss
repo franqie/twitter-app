@@ -1,0 +1,98 @@
+.rightbox {
+    padding: 0 1rem;
+    form {
+        position: fixed;
+        top: 0;
+        width: 380px;
+        background-color: #fff;
+        padding: 0.5rem 0 0.3rem;
+    }
+
+    .searchbox {
+        background-color: rgb(164, 164, 164, 0.2);
+        width: 100%;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+
+        .searchIcon {
+            margin: 0 15px 0 12px;
+            svg {
+                width: 20px;
+                transform: translateY(2px);
+            }
+        }
+
+        input {
+            width: 100%;
+            display: relative;
+            outline: 0;
+            border: 0;
+            padding: 10px 0; 
+            background-color: transparent;
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+
+    .searchbox.hasfocus {
+        border: 1px solid $twitterBlue;
+        background-color: #fff;
+
+        svg {
+            fill: $twitterBlue
+        }
+    }
+
+    svg {
+        width: 24px;
+    }
+    img {
+        width: 52px;
+        object-fit: contain;
+    }
+
+    .tb-tf-rf {
+        width: 380px;
+        margin-top: 63px;
+    }
+
+    .followbox,
+    .trendbox {
+        background-color: rgb(164, 164, 164, 0.2);
+        border-radius: 20px;
+        margin-top: 1rem;
+        // padding-bottom: 1rem;
+        
+        h2 {
+            padding: 0.7rem 1rem;
+        }
+        
+        .showmore-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0 0 20px 20px;
+            border: 0;
+            font-weight: 600;
+            text-align: left;
+            color: $twitterBlue;
+            background-color: transparent;
+            cursor: pointer;
+            @include bg-hover-effect;
+        }
+    }
+
+    .right-footer {
+        margin-top: 1rem;
+        margin-bottom: 10rem;
+        padding: 0.2rem 1rem;
+        font-size: 0.85rem;
+        color: $text-light;
+
+        span {
+            margin-right: 0.8rem;
+            line-height: 1.3;
+        }
+    }
+}
