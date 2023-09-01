@@ -1,5 +1,5 @@
 .messages {
-    // background: rgb(200, 176, 176);
+    background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     width: 420px;
     height: 53px;
@@ -11,6 +11,10 @@
     right: 50px;
     transition: height ease 0.2s;
     overflow-y: hidden;
+
+    @include media-queries(1030px){
+        display: none;
+    }
     
     .messages-header {
         padding: 0.65rem 1rem;

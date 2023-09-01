@@ -1,4 +1,4 @@
-import img from "../images/kdb(3).jpeg";
+import img from "../assets/images/kdb(3).jpeg";
 
 const WhoToFollow = () => {
   return (

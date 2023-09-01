@@ -1,4 +1,4 @@
-import SearchIcon from "../icons/SearchIcon";
+import SearchIcon from "../assets/icons/SearchIcon";
 // import img from "../images/kdb(3).jpeg";
 import Trend from "./Trend";
 import WhoToFollow from "./WhoToFollow";

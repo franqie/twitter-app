@@ -1,4 +1,4 @@
-import ThreeDotsHIcon from "../icons/ThreeDotsHIcon";
+import ThreeDotsHIcon from "../assets/icons/ThreeDotsHIcon";
 
 const Trend = () => {
     return ( 

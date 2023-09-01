@@ -1,8 +1,24 @@
 .homepage {
-    // background: red;
-    padding: 0.4rem 0;
     flex-grow: 1;
-    margin-left: $nav-width;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: flex-start;
+
+    .homepage-container {
+        flex-grow: 1;
+        width: 990px;
+        display: flex;
+        gap: 2rem;
+
+        @include media-queries(1115px){
+            width: 920px;
+            gap: 1.5rem;
+        }
+        @include media-queries(1030px){
+            max-width: 600px;
+        }
+        @include media-queries(730px){
+            width: 100%;
+        }
+    }
 }

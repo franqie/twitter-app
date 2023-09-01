@@ -5,3 +5,32 @@
         background-color: $color;
     }
 }
+
+
+@mixin media-queries($breakpoints) {
+    @if $breakpoints==atLarger {
+      @media only screen and (max-width: 1920px) {
+        @content;
+      }
+    } @else if $breakpoints==atLarge {
+      @media only screen and (max-width: 1300px) {
+        @content;
+      }
+    } @else if $breakpoints==atMediumLarge {
+      @media only screen and (max-width: 950px) {
+        @content;
+      }
+    } @else if $breakpoints==atMedium {
+      @media only screen and (max-width: 600px) {
+        @content;
+      }
+    } @else if $breakpoints==atSmall {
+      @media only screen and (max-width: 500px) {
+        @content;
+      }
+    } @else {
+      @media only screen and (max-width: $breakpoints) {
+        @content;
+      }
+    }
+  }

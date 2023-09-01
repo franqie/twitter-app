@@ -1,0 +1,145 @@
+.sidebar {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    @include media-queries(730px){
+        flex-grow: 0;
+    }
+
+    @include media-queries(atSmall){
+        display: none;
+    }
+    
+    .main {
+        width: 275px;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        @include media-queries(atLarge){
+            width: 88px;
+            justify-content: center;
+        }
+    }
+    
+    .sidebar-container {
+        // width: min-content;
+        padding: 0 0.5rem 0.5rem 0;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    svg {
+        width: 28px;
+    }
+
+    .sidebar-box {
+       margin-bottom: auto;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include bg-hover-effect;
+        
+        svg {
+            width: 30px;
+        }
+    }
+
+    .tweet-btn {
+        background-color: $twitterBlue;
+        color: #fff;
+        width: 200px;
+        height: 48px;
+        line-height: 48px;
+        border-radius: 999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        margin-top: 0.3rem;
+        border: none;
+        // margin-left: 0.55rem;
+        cursor: pointer;
+
+        svg {
+            display: none;
+            width: 24px;
+            fill: #fff;
+        }
+
+        @include media-queries(atLarge) {
+            width: 48px;
+
+            span {
+                display: none;
+            }
+            svg {
+                display: block;
+            }
+        }
+    }
+
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: self-start;
+    }
+
+    .profile {
+        width: 230px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 0.5rem;
+        border-radius: 9999px;
+        bottom: 1rem;
+
+        @include bg-hover-effect;
+
+        img {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 0.7rem;
+        }
+
+        .profile-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-id {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.75rem;
+        }
+
+        .profile-id .name {
+            font-weight: 600;
+        }
+
+        svg {
+            width: 18px;
+        }
+
+        @include media-queries(atLarge) {
+            display: none;
+         }
+    }
+}

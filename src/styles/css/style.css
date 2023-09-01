@@ -5,32 +5,96 @@
 }
 
 .app {
-  height: 100vh;
-  padding: 0 4rem;
-}
-.app .container {
-  height: 100%;
-  display: flex;
+  min-height: 100vh;
 }
 
-.navigation {
-  padding: 0.1rem 0 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 1px solid #eee;
-  height: 100%;
-  max-height: 100vh;
-  width: 255px;
+.mobile-header {
   position: fixed;
+  top: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
 }
-.navigation svg {
+.mobile-header .logo {
+  display: inline-block;
+  width: 30px;
+  margin: 0 auto;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+@media only screen and (max-width: 500px) {
+  .bottom-nav {
+    display: flex;
+  }
+}
+.bottom-nav svg {
   width: 28px;
 }
-.navigation .nav-container {
-  padding-right: 1rem;
+
+.container {
+  min-height: 690px;
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  flex-shrink: 0;
 }
-.navigation .logo {
+
+.sidebar {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 730px) {
+  .sidebar {
+    flex-grow: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar .main {
+  width: 275px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+@media only screen and (max-width: 1300px) {
+  .sidebar .main {
+    width: 88px;
+    justify-content: center;
+  }
+}
+.sidebar .sidebar-container {
+  padding: 0 0.5rem 0.5rem 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar svg {
+  width: 28px;
+}
+.sidebar .sidebar-box {
+  margin-bottom: auto;
+}
+.sidebar .logo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -39,72 +103,94 @@
   align-items: center;
   transition: background-color ease 0.2s;
 }
-.navigation .logo:hover {
+.sidebar .logo:hover {
   background-color: #e1e8ed;
 }
-.navigation .logo svg {
+.sidebar .logo svg {
   width: 30px;
-  fill: #1da1f2;
 }
-.navigation .tweet {
+.sidebar .tweet-btn {
   background-color: #1da1f2;
   color: #fff;
   width: 200px;
   height: 48px;
   line-height: 48px;
-  border-radius: 30px;
+  border-radius: 999px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
   margin-top: 0.3rem;
+  border: none;
   cursor: pointer;
 }
-.navigation .profile {
+.sidebar .tweet-btn svg {
+  display: none;
+  width: 24px;
+  fill: #fff;
+}
+@media only screen and (max-width: 1300px) {
+  .sidebar .tweet-btn {
+    width: 48px;
+  }
+  .sidebar .tweet-btn span {
+    display: none;
+  }
+  .sidebar .tweet-btn svg {
+    display: block;
+  }
+}
+.sidebar .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+.sidebar .profile {
   width: 230px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0.8rem;
-  border-radius: 2rem;
-  position: absolute;
+  padding: 0.8rem 0.5rem;
+  border-radius: 9999px;
   bottom: 1rem;
   transition: background-color ease 0.2s;
 }
-.navigation .profile:hover {
+.sidebar .profile:hover {
   background-color: #e1e8ed;
 }
-.navigation .profile img {
+.sidebar .profile img {
   width: 36px;
   height: 36px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   margin-right: 0.7rem;
 }
-.navigation .profile .profile-box {
+.sidebar .profile .profile-box {
   display: flex;
   align-items: center;
 }
-.navigation .profile .profile-id {
+.sidebar .profile .profile-id {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 0.75rem;
 }
-.navigation .profile .profile-id .name {
+.sidebar .profile .profile-id .name {
   font-weight: 600;
 }
-.navigation .profile svg {
+.sidebar .profile svg {
   width: 18px;
+}
+@media only screen and (max-width: 1300px) {
+  .sidebar .profile {
+    display: none;
+  }
 }
 
 .nav-item {
-  margin: 0.2rem 0.25rem;
-  padding: 0.45rem 0.55rem;
-  padding-right: 1.5rem;
-  border-radius: 20px;
   display: inline-block;
+  padding: 0.55rem;
+  border-radius: 9999px;
   cursor: pointer;
   transition: background-color ease 0.2s;
 }
@@ -112,40 +198,75 @@
   background-color: #e1e8ed;
 }
 .nav-item svg {
-  margin-right: 1rem;
   vertical-align: middle;
   line-height: 1.5;
 }
 .nav-item .nav-text {
+  margin-left: 1rem;
   font-size: 1.1rem;
-  display: inline-block;
   vertical-align: middle;
   line-height: 1.5;
   transform: translateY(-1px);
 }
+@media only screen and (max-width: 1300px) {
+  .nav-item .nav-text {
+    display: none;
+  }
+}
 
 .homepage {
-  padding: 0.4rem 0;
   flex-grow: 1;
-  margin-left: 255px;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+.homepage .homepage-container {
+  flex-grow: 1;
+  width: 990px;
+  display: flex;
+  gap: 2rem;
+}
+@media only screen and (max-width: 1115px) {
+  .homepage .homepage-container {
+    width: 920px;
+    gap: 1.5rem;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .homepage .homepage-container {
+    max-width: 600px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  .homepage .homepage-container {
+    width: 100%;
+  }
 }
 
 .home {
   width: 100%;
+  max-width: 600px;
+  flex-grow: 1;
+  border-left: 1px solid rgb(239, 243, 244);
+  border-right: 1px solid rgb(239, 243, 244);
 }
 .home .home-header {
   border-bottom: 1px solid #eee;
-  position: fixed;
+  position: sticky;
   top: 0;
-  height: 121px;
-  width: 608px;
-  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
 }
-.home h2 {
+.home h2.page-title {
   padding: 1rem;
   cursor: pointer;
+}
+@media only screen and (max-width: 500px) {
+  .home h2.page-title {
+    display: none;
+  }
 }
 .home .fyf {
   display: flex;
@@ -159,6 +280,10 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  transition: background-color ease 0.2s;
+}
+.home .fyf button:hover {
+  background-color: #e1e8ed;
 }
 .home .fyf span {
   display: inline-block;
@@ -175,7 +300,6 @@
   padding: 0.7rem 1rem;
   padding-bottom: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 121px;
 }
 .home .tweetfieldbox svg {
   width: 18px;
@@ -184,8 +308,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 1rem;
 }
 .home .tweetfieldbox .tweetfield {
@@ -195,7 +318,7 @@
   flex-grow: 1;
 }
 .home .tweetfieldbox .tweetinput button {
-  display: flex;
+  display: none;
   align-items: center;
   background-color: transparent;
   font-weight: 600;
@@ -204,6 +327,7 @@
   cursor: pointer;
   padding: 1px 12px;
   border-radius: 12px;
+  transition: display ease 0.2s;
 }
 .home .tweetfieldbox .tweetinput button:hover {
   background-color: rgba(29, 161, 242, 0.1);
@@ -221,6 +345,12 @@
 .home .tweetfieldbox .tweetinput .btn-bottom svg {
   margin-right: 5px;
   fill: #1da1f2;
+}
+.home .tweetfieldbox .tweetinput .btn-top.visible {
+  display: flex;
+}
+.home .tweetfieldbox .tweetinput .btn-bottom.visible {
+  display: flex;
 }
 .home .tweetfieldbox .tweetinput input {
   width: 100%;
@@ -268,20 +398,37 @@
   padding: 10px 18px;
   cursor: pointer;
 }
+.home button:disabled {
+  opacity: 0.5;
+}
 
 .rightbox {
-  padding: 0 1rem;
+  width: 350px;
+}
+@media only screen and (max-width: 1115px) {
+  .rightbox {
+    width: 290px;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .rightbox {
+    display: none;
+  }
 }
 .rightbox form {
   position: fixed;
   top: 0;
-  width: 380px;
+  width: 350px;
   background-color: #fff;
   padding: 0.5rem 0 0.3rem;
 }
+@media only screen and (max-width: 1115px) {
+  .rightbox form {
+    width: 290px;
+  }
+}
 .rightbox .searchbox {
-  background-color: rgba(164, 164, 164, 0.2);
-  width: 100%;
+  background-color: rgba(164, 164, 164, 0.09);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -295,7 +442,6 @@
   transform: translateY(2px);
 }
 .rightbox .searchbox input {
-  width: 100%;
   display: relative;
   outline: 0;
   border: 0;
@@ -316,16 +462,14 @@
 }
 .rightbox img {
   width: 52px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .rightbox .tb-tf-rf {
-  width: 380px;
   margin-top: 63px;
 }
 .rightbox .followbox,
 .rightbox .trendbox {
-  background-color: rgba(164, 164, 164, 0.2);
+  background-color: rgba(164, 164, 164, 0.09);
   border-radius: 20px;
   margin-top: 1rem;
 }
@@ -363,6 +507,7 @@
 }
 
 .messages {
+  background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   width: 420px;
   height: 53px;
@@ -374,6 +519,11 @@
   right: 50px;
   transition: height ease 0.2s;
   overflow-y: hidden;
+}
+@media only screen and (max-width: 1030px) {
+  .messages {
+    display: none;
+  }
 }
 .messages .messages-header {
   padding: 0.65rem 1rem;
@@ -587,4 +737,161 @@
   font-weight: 600;
   color: #fff;
   cursor: pointer;
+}
+
+.tweet-button {
+  background-color: #1da1f2;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  right: 1rem;
+  bottom: 5rem;
+}
+.tweet-button svg {
+  width: 24px;
+  fill: #fff;
+}
+@media only screen and (max-width: 500px) {
+  .tweet-button {
+    display: flex;
+  }
+}
+
+.tweet {
+  padding: 0.8rem 1rem;
+  display: flex;
+  cursor: pointer;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color ease 0.2s;
+}
+.tweet:hover {
+  background-color: rgba(164, 164, 164, 0.09);
+}
+.tweet .userphoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+.tweet svg {
+  width: 18px;
+  fill: rgb(83, 100, 113);
+}
+.tweet .tweetheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -4px;
+}
+.tweet .tweetheader .tweetid span:first-child {
+  font-weight: 600;
+}
+.tweet .tweetheader .tweetid span:last-child {
+  color: rgb(83, 100, 113);
+}
+.tweet .tweetheader button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-right: -8px;
+  cursor: pointer;
+  transition: background-color ease 0.2s;
+}
+.tweet .tweetheader button:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+.tweet .tweetheader button:hover svg {
+  fill: #1da1f2;
+}
+.tweet .tweetcontent img {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+.tweet .tweetfooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+  margin-bottom: 0;
+}
+.tweet .tweetfooter button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.tweet .tweetfooter button:hover .tweeticon {
+  background-color: rgba(29, 161, 242, 0.1);
+}
+.tweet .tweetfooter button:hover svg {
+  fill: #1da1f2;
+}
+.tweet .tweetfooter button:hover .iconlabel {
+  color: #1da1f2;
+}
+.tweet .tweetfooter .tweeticon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.tweet .tweetfooter button.likes:hover .iconlabel {
+  color: rgb(249, 24, 128);
+}
+.tweet .tweetfooter button.likes:hover svg {
+  fill: rgb(249, 24, 128);
+}
+.tweet .tweetfooter button.likes:hover .tweeticon {
+  background-color: rgba(249, 24, 128, 0.1);
+}
+.tweet .tweetfooter button.retweet:hover .iconlabel {
+  color: rgb(0, 186, 124);
+}
+.tweet .tweetfooter button.retweet:hover svg {
+  fill: rgb(0, 186, 124);
+}
+.tweet .tweetfooter button.retweet:hover .tweeticon {
+  background-color: rgba(0, 186, 124, 0.1);
+}
+
+.profile-mobile {
+  padding: 0.5rem;
+  display: none;
+  border-radius: 9999px;
+  transition: background-color ease 0.2s;
+}
+.profile-mobile:hover {
+  background-color: #e1e8ed;
+}
+.profile-mobile .profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 1300px) {
+  .profile-mobile {
+    display: grid;
+    place-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */

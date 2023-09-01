@@ -1,16 +1,26 @@
 .rightbox {
-    padding: 0 1rem;
+    width: 350px;
+    @include media-queries(1115px){
+        width: 290px;
+    }
+    @include media-queries(1030px){
+        display: none;
+    }
+
     form {
         position: fixed;
         top: 0;
-        width: 380px;
+        width: 350px;
         background-color: #fff;
         padding: 0.5rem 0 0.3rem;
+        @include media-queries(1115px){
+            width: 290px;
+        }
     }
 
     .searchbox {
-        background-color: rgb(164, 164, 164, 0.2);
-        width: 100%;
+        background-color: $bg-light;
+        // width: 100%;
         border-radius: 30px;
         display: flex;
         align-items: center;
@@ -25,7 +35,7 @@
         }
 
         input {
-            width: 100%;
+            // width: 100%;
             display: relative;
             outline: 0;
             border: 0;
@@ -54,13 +64,13 @@
     }
 
     .tb-tf-rf {
-        width: 380px;
+        // max-width: 380px;
         margin-top: 63px;
     }
 
     .followbox,
     .trendbox {
-        background-color: rgb(164, 164, 164, 0.2);
+        background-color: $bg-light;
         border-radius: 20px;
         margin-top: 1rem;
         // padding-bottom: 1rem;

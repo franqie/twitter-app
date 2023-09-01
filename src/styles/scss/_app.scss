@@ -1,11 +1,4 @@
 .app {
-    height: 100vh;
-    padding: 0 4rem;
-    // background: cyan;
-
-    .container {
-        height: 100%;
-        display: flex;
-        // grid-template-columns: 1fr 4fr;
-    }
+    min-height: 100vh;
+    // padding: 0 min(4vw, 4rem);
 }

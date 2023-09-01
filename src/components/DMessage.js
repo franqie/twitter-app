@@ -1,5 +1,5 @@
-import ThreeDotsHIcon from "../icons/ThreeDotsHIcon";
-import img from "../images/kdb(4).jpeg";
+import ThreeDotsHIcon from "../assets/icons/ThreeDotsHIcon";
+import img from "../assets/images/kdb(4).jpeg";
 
 const DMessage = ({name, username}) => {
     return ( 

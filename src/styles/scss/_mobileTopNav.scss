@@ -1,0 +1,19 @@
+.mobile-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+    align-items: center;
+    background-color: #fff;
+    z-index: 10;
+
+    // @include media-queries(atSmall){
+    //     display: flex;
+    // }
+
+    .logo {
+        display: inline-block;
+        width: 30px;
+        margin: 0 auto;
+    }
+}

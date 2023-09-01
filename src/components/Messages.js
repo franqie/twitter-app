@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import MessageIcon from "../icons/MessageIcon";
-import DoubleArrowUpIcon from "../icons/DoubleArrowUpIcon";
-import DoubleArrowDownIcon from "../icons/DoubleArrowDownIcon";
+import MessageIcon from "../assets/icons/MessageIcon";
+import DoubleArrowUpIcon from "../assets/icons/DoubleArrowUpIcon";
+import DoubleArrowDownIcon from "../assets/icons/DoubleArrowDownIcon";
 import DMessage from './DMessage';
 // import MessageIcon from "../icons/MessageIcon";
 
-const Messages = () => {
+export const Messages = () => {
     const [showMessage, setShowMessage] = useState(false);
   return (
     <div className={`${showMessage ? "messages show" : "messages"}`}>
@@ -59,5 +59,3 @@ const Messages = () => {
     </div>
   )
 }
-
-export default Messages;
